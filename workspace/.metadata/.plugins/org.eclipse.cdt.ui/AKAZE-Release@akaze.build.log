@@ -1,0 +1,47 @@
+16:25:42 **** Build of project AKAZE-Release@akaze ****
+/usr/bin/gmake -j12 all 
+/usr/bin/cmake -H/home/ah14aeb/Software/kaze/akaze -B/home/ah14aeb/Software/kaze/akaze --check-build-system CMakeFiles/Makefile.cmake 0
+/usr/bin/cmake -E cmake_progress_start /home/ah14aeb/Software/kaze/akaze/CMakeFiles /home/ah14aeb/Software/kaze/akaze/CMakeFiles/progress.marks
+/usr/bin/gmake -f CMakeFiles/Makefile2 all
+gmake[1]: Entering directory '/home/ah14aeb/Software/kaze/akaze'
+/usr/bin/gmake -f src/CMakeFiles/AKAZE.dir/build.make src/CMakeFiles/AKAZE.dir/depend
+gmake[2]: Entering directory '/home/ah14aeb/Software/kaze/akaze'
+cd /home/ah14aeb/Software/kaze/akaze && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/ah14aeb/Software/kaze/akaze /home/ah14aeb/Software/kaze/akaze/src /home/ah14aeb/Software/kaze/akaze /home/ah14aeb/Software/kaze/akaze/src /home/ah14aeb/Software/kaze/akaze/src/CMakeFiles/AKAZE.dir/DependInfo.cmake --color=
+gmake[2]: Leaving directory '/home/ah14aeb/Software/kaze/akaze'
+/usr/bin/gmake -f src/CMakeFiles/AKAZE.dir/build.make src/CMakeFiles/AKAZE.dir/build
+gmake[2]: Entering directory '/home/ah14aeb/Software/kaze/akaze'
+gmake[2]: Nothing to be done for 'src/CMakeFiles/AKAZE.dir/build'.
+gmake[2]: Leaving directory '/home/ah14aeb/Software/kaze/akaze'
+[ 45%] Built target AKAZE
+/usr/bin/gmake -f src/CMakeFiles/akaze_compare.dir/build.make src/CMakeFiles/akaze_compare.dir/depend
+/usr/bin/gmake -f src/CMakeFiles/akaze_features.dir/build.make src/CMakeFiles/akaze_features.dir/depend
+/usr/bin/gmake -f src/CMakeFiles/akaze_match.dir/build.make src/CMakeFiles/akaze_match.dir/depend
+gmake[2]: Entering directory '/home/ah14aeb/Software/kaze/akaze'
+cd /home/ah14aeb/Software/kaze/akaze && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/ah14aeb/Software/kaze/akaze /home/ah14aeb/Software/kaze/akaze/src /home/ah14aeb/Software/kaze/akaze /home/ah14aeb/Software/kaze/akaze/src /home/ah14aeb/Software/kaze/akaze/src/CMakeFiles/akaze_compare.dir/DependInfo.cmake --color=
+gmake[2]: Entering directory '/home/ah14aeb/Software/kaze/akaze'
+cd /home/ah14aeb/Software/kaze/akaze && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/ah14aeb/Software/kaze/akaze /home/ah14aeb/Software/kaze/akaze/src /home/ah14aeb/Software/kaze/akaze /home/ah14aeb/Software/kaze/akaze/src /home/ah14aeb/Software/kaze/akaze/src/CMakeFiles/akaze_match.dir/DependInfo.cmake --color=
+gmake[2]: Entering directory '/home/ah14aeb/Software/kaze/akaze'
+cd /home/ah14aeb/Software/kaze/akaze && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/ah14aeb/Software/kaze/akaze /home/ah14aeb/Software/kaze/akaze/src /home/ah14aeb/Software/kaze/akaze /home/ah14aeb/Software/kaze/akaze/src /home/ah14aeb/Software/kaze/akaze/src/CMakeFiles/akaze_features.dir/DependInfo.cmake --color=
+gmake[2]: Leaving directory '/home/ah14aeb/Software/kaze/akaze'
+/usr/bin/gmake -f src/CMakeFiles/akaze_compare.dir/build.make src/CMakeFiles/akaze_compare.dir/build
+gmake[2]: Leaving directory '/home/ah14aeb/Software/kaze/akaze'
+gmake[2]: Leaving directory '/home/ah14aeb/Software/kaze/akaze'
+/usr/bin/gmake -f src/CMakeFiles/akaze_features.dir/build.make src/CMakeFiles/akaze_features.dir/build
+/usr/bin/gmake -f src/CMakeFiles/akaze_match.dir/build.make src/CMakeFiles/akaze_match.dir/build
+gmake[2]: Entering directory '/home/ah14aeb/Software/kaze/akaze'
+gmake[2]: Nothing to be done for 'src/CMakeFiles/akaze_compare.dir/build'.
+gmake[2]: Leaving directory '/home/ah14aeb/Software/kaze/akaze'
+gmake[2]: Entering directory '/home/ah14aeb/Software/kaze/akaze'
+gmake[2]: Nothing to be done for 'src/CMakeFiles/akaze_match.dir/build'.
+gmake[2]: Leaving directory '/home/ah14aeb/Software/kaze/akaze'
+gmake[2]: Entering directory '/home/ah14aeb/Software/kaze/akaze'
+gmake[2]: Nothing to be done for 'src/CMakeFiles/akaze_features.dir/build'.
+gmake[2]: Leaving directory '/home/ah14aeb/Software/kaze/akaze'
+[ 63%] Built target akaze_compare
+[ 81%] Built target akaze_match
+[100%] Built target akaze_features
+gmake[1]: Leaving directory '/home/ah14aeb/Software/kaze/akaze'
+/usr/bin/cmake -E cmake_progress_start /home/ah14aeb/Software/kaze/akaze/CMakeFiles 0
+
+16:25:43 Build Finished (took 243ms)
+

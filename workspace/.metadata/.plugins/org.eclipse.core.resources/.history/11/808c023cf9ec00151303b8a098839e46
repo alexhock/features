@@ -1,0 +1,229 @@
+/*
+ * main.cpp
+ *
+ *  Created on: 16 Mar 2016
+ *      Author: ah14aeb
+ */
+#include <opencv2/features2d.hpp>
+#include <opencv2/imgcodecs.hpp>
+#include <opencv2/opencv.hpp>
+#include <vector>
+#include <iostream>
+#include <fstream>
+#include <fitsio.h>
+#include "CFitsImages.h"
+
+void HoG()
+{
+	//http://stackoverflow.com/questions/11626140/extracting-hog-features-using-opencv
+	// http://answers.opencv.org/question/70491/matching-hog-images-with-opencv-in-c/
+/*	cv::HOGDescriptor hog;
+	std::vector<float> ders;
+	std::vector<cv::Point>locs;
+	hog.compute(grayImg,ders, cv::Size(32,32), cv::Size(0,0),locs);
+
+	cv::Hogfeat.create(ders.size(),1,CV_32FC1);
+
+	for(int i=0;i<ders.size();i++)
+	{
+	  Hogfeat.at<float>(i,0)=ders.at(i);
+
+	}
+
+	hog.blockSize=16;
+	hog.cellSize=4;
+	hog.blockStride=8;
+
+	float Threshold = 0.001;
+	//This is for comparing the HOG features of two images without using any SVM
+	//(It is not an efficient way but useful when you want to compare only few or two images)
+	//Simple distance
+	//Consider you have two hog feature vectors for two images Hogfeat1 and Hogfeat2 and those are same size.
+	double distance=0;
+	for(int i=0;i<Hogfeat.rows;i++)
+	{
+	   distance+ = abs(Hogfeat.at<float>(i,0) - Hogfeat.at<float>(i,0));
+	}
+	if(distance < Threshold)
+		std::cout<<"Two images are of same class"<< std::endl;
+	else
+		std::cout<<"Two images are of different class"<<std::endl;
+*/
+}
+
+void adaptiveThreshold2(cv::InputArray _src, cv::OutputArray _dst, double maxValue, int method, int type, int blockSize, double delta)
+{
+    cv::Mat src = _src.getMat();
+    //CV_Assert( src.type() == CV_8UC1 );
+    CV_Assert( blockSize % 2 == 1 && blockSize > 1 );
+    cv::Size size = src.size();
+
+    _dst.create( size, src.type() );
+    cv::Mat dst = _dst.getMat();
+
+    if( maxValue < 0 )
+    {
+        dst = cv::Scalar(0);
+        return;
+    }
+
+    cv::Mat mean;
+
+    if( src.data != dst.data )
+        mean = dst;
+
+    if (method == cv::ADAPTIVE_THRESH_MEAN_C)
+        cv::boxFilter( src, mean, src.type(), cv::Size(blockSize, blockSize),
+                   cv::Point(-1,-1), true, cv::BORDER_REPLICATE );
+    else if (method == cv::ADAPTIVE_THRESH_GAUSSIAN_C)
+    {
+        cv::Mat srcfloat,meanfloat;
+        src.convertTo(srcfloat,CV_32F);
+        meanfloat=srcfloat;
+        cv::GaussianBlur(srcfloat, meanfloat, cv::Size(blockSize, blockSize), 0, 0, cv::BORDER_REPLICATE);
+        meanfloat.convertTo(mean, src.type());
+    }
+    else
+        CV_Error( CV_StsBadFlag, "Unknown/unsupported adaptive threshold method" );
+
+    unsigned long long i;
+    unsigned long long j;
+    uchar imaxval = cv::saturate_cast<uchar>(maxValue);
+    int idelta = type == cv::THRESH_BINARY ? cvCeil(delta) : cvFloor(delta);
+    uchar tab[768];
+
+    if( type == CV_THRESH_BINARY )
+        for( i = 0; i < 768; i++ )
+            tab[i] = (uchar)(i - 255 > -idelta ? imaxval : 0);
+    else if( type == CV_THRESH_BINARY_INV )
+        for( i = 0; i < 768; i++ )
+            tab[i] = (uchar)(i - 255 <= -idelta ? imaxval : 0);
+    else
+        CV_Error( CV_StsBadFlag, "Unknown/unsupported threshold type" );
+
+    unsigned long long width = 0;
+    unsigned long long height = 0;
+    if( src.isContinuous() && mean.isContinuous() && dst.isContinuous() )
+    {
+        //size.width *= size.height;
+    	width = size.width;
+    	width = width * size.height;
+        height = size.height = 1;
+    }
+
+    for( i = 0; i < height; i++ )
+    {
+    	const uchar* sdata = src.data + src.step.p[0] * i;
+    	const uchar* mdata = mean.data + mean.step.p[0] * i;
+    	uchar* ddata = dst.data + dst.step.p[0] * i;
+
+        //const uchar* sdata = src.ptr(i);
+        //const uchar* mdata = mean.ptr(i);
+        //uchar* ddata = dst.ptr(i);
+
+
+        for( j = 0; j < width; j++ )
+            ddata[j] = tab[sdata[j] - mdata[j] + 255];
+    }
+}
+
+void adaptive_threshold(cv::Mat* in, cv::Mat* out)
+{
+	adaptiveThreshold2(*in, *out, 0.1, cv::ADAPTIVE_THRESH_GAUSSIAN_C, cv::THRESH_BINARY, 7, 0);
+
+	//adaptiveThreshold2(*in, *out, 0.1, cv::ADAPTIVE_THRESH_MEAN_C, cv::THRESH_BINARY, 101, 0);
+}
+
+void run_threshold(std::string out_file_path, CFitsImages& fits_images)
+{
+	std::ostringstream output_file_path;
+	output_file_path << out_file_path << "thresholded_fits_file.fits";
+
+	int image_idx = 0;
+	cv::Mat* img = fits_images.get_image(image_idx);
+	cv::Mat copy1 = img->clone();
+	adaptive_threshold(img, &copy1);
+
+	fits_images.save_fits_image(image_idx, output_file_path.str(), copy1);
+}
+
+void create_descriptor_file(const std::string& file_path, cv::Mat& desc)
+{
+	std::ofstream desc_file;
+	desc_file.open(file_path.c_str());
+	std::cout << "descriptor matrix rows: " << desc.rows << " cols: " << desc.cols << std::endl;
+	desc_file << cv::format(desc, cv::Formatter::FMT_CSV) << std::endl;
+	desc_file.close();
+}
+
+void create_ds9_region_file(const std::string& file_path, std::vector<cv::KeyPoint>& kpts)
+{
+	std::ofstream region_file;
+	region_file.open (file_path.c_str());
+	for (unsigned int i=0 ;i < kpts.size(); i++)
+	{
+		float angle = kpts[i].angle;
+		int pyramid_layer = kpts[i].octave;
+		cv::Point2f pt = kpts[i].pt;
+		float response = kpts[i].response; // response by which the most strong keypoints have been selected. can be used for sorting and subsampling
+		float size = kpts[i].size; // diameter
+
+		std::ostringstream row_line;
+		row_line << "circle(" <<  pt.x << "," << pt.y << "," << size << ") # angle " << angle
+				<< " pyr_layer" << pyramid_layer << " response " << response <<  std::endl;
+
+		region_file << row_line.str();
+	}
+	region_file.close();
+}
+
+int run_akaze(std::string base_file_path, std::string output_base_path, CFitsImages& fits_images)
+{
+	for (int image_idx = 0; image_idx < fits_images.get_image_count(); image_idx++)
+	{
+		cv::Mat* imageMat = fits_images.get_image(image_idx);
+
+	    std::vector<cv::KeyPoint> kpts;
+	    cv::Mat desc;
+
+
+	    cv::Ptr<cv::AKAZE> akaze = cv::AKAZE::create();
+	    akaze->setThreshold(-0.01);
+	    akaze->detectAndCompute(*imageMat, cv::noArray(), kpts, desc);
+
+	    std::cout << "key points: " << kpts.size() << std::endl;
+	    std::cout << "desc1 rows:" << desc.rows << " cols: " << desc.cols << std::endl;
+
+	    std::ostringstream region_file_path;
+	    region_file_path << output_base_path << "/keypoints_" << image_idx << ".reg";
+	    create_ds9_region_file(region_file_path.str(), kpts);
+	    std::ostringstream descriptor_file_path;
+	    descriptor_file_path << output_base_path  << "/descriptor_" << image_idx << ".csv";
+	    create_descriptor_file(descriptor_file_path.str(), desc);
+	}
+	return 0;
+}
+
+int main(void)
+{
+
+	CFitsImages fits_images;
+	std::string output_base_path = "/home/ah14aeb/projects/workspace/data/";
+	std::string fits_base_path = "/run/media/ah14aeb/New Volume/Users/alexh/OneDrive/Data/Images/v1.0/";
+	std::string F435_final_path = fits_base_path + "macs1149/hlsp_frontier_hst_acs-30mas_macs1149_f435w_v1.0-epoch1_drz_ok.fits";
+	std::string F606_final_path = fits_base_path + "macs1149/hlsp_frontier_hst_acs-30mas_macs1149_f606w_v1.0-epoch1_drz_ok.fits";
+	std::string F814_final_path = fits_base_path + "macs1149/hlsp_frontier_hst_acs-30mas_macs1149_f814w_v1.0-epoch1_drz_ok.fits";
+
+	//fits_images.load_fits_file(F435_final_path);
+	//fits_images.load_fits_file(F606_final_path);
+	fits_images.load_fits_file(F814_final_path);
+
+	//run_threshold(output_base_path, fits_images);
+
+	run_akaze(fits_base_path, output_base_path, fits_images);
+
+	std::cout << "Finished" << std::endl;
+
+
+	return 0;
+}

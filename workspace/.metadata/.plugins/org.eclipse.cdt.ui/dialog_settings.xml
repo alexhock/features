@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<item value="opencv_cudaimgproc" key="org.eclipse.cdt.utils.ui.controls.FileListControl"/>
+	<item value="Default C++ source template" key="LastUsedSourceTemplate"/>
+	<item value="Default C++ header template" key="LastUsedHeaderTemplate"/>
+	<section name="CPathsPropertyPage">
+		<item value="0" key="pageIndex"/>
+	</section>
+	<section name="org.eclipse.cdt.ui.text.hover.CMacroExpansionExploration">
+	</section>
+	<section name="OptionalMessageDialog.hide.">
+		<item value="0" key="askReindex.detail"/>
+	</section>
+	<section name="IncludeSysmbolsPropertyPage">
+		<item value="0" key="pageIndex"/>
+	</section>
+	<section name="completion_proposal_size">
+		<item value="228" key="contextSelector.size.y"/>
+		<item value="137" key="contextSelector.size.x"/>
+	</section>
+</section>

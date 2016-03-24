@@ -1,0 +1,163 @@
+11:59:20 **** Build of project AKAZE-Release@akaze ****
+/usr/bin/gmake -j12 all 
+/usr/bin/cmake -H/home/ah14aeb/Software/kaze/akaze -B/home/ah14aeb/Software/kaze/akaze --check-build-system CMakeFiles/Makefile.cmake 0
+/usr/bin/cmake -E cmake_progress_start /home/ah14aeb/Software/kaze/akaze/CMakeFiles /home/ah14aeb/Software/kaze/akaze/CMakeFiles/progress.marks
+/usr/bin/gmake -f CMakeFiles/Makefile2 all
+gmake[1]: Entering directory '/home/ah14aeb/Software/kaze/akaze'
+/usr/bin/gmake -f src/CMakeFiles/AKAZE.dir/build.make src/CMakeFiles/AKAZE.dir/depend
+gmake[2]: Entering directory '/home/ah14aeb/Software/kaze/akaze'
+cd /home/ah14aeb/Software/kaze/akaze && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/ah14aeb/Software/kaze/akaze /home/ah14aeb/Software/kaze/akaze/src /home/ah14aeb/Software/kaze/akaze /home/ah14aeb/Software/kaze/akaze/src /home/ah14aeb/Software/kaze/akaze/src/CMakeFiles/AKAZE.dir/DependInfo.cmake --color=
+Scanning dependencies of target AKAZE
+gmake[2]: Leaving directory '/home/ah14aeb/Software/kaze/akaze'
+/usr/bin/gmake -f src/CMakeFiles/AKAZE.dir/build.make src/CMakeFiles/AKAZE.dir/build
+gmake[2]: Entering directory '/home/ah14aeb/Software/kaze/akaze'
+[  9%] Building CXX object src/CMakeFiles/AKAZE.dir/lib/nldiffusion_functions.cpp.o
+cd /home/ah14aeb/Software/kaze/akaze/src && /usr/bin/c++    -I/home/ah14aeb/Software/kaze/akaze/src/lib -isystem /home/ah14aeb/Software/opencv310/include/opencv -isystem /home/ah14aeb/Software/opencv310/include  -fopenmp -O3 -Wall -Wextra -Wunused-variable -g -fPIC -msse2 -msse3 -msse4 -ffast-math   -o CMakeFiles/AKAZE.dir/lib/nldiffusion_functions.cpp.o -c /home/ah14aeb/Software/kaze/akaze/src/lib/nldiffusion_functions.cpp
+[ 18%] Building CXX object src/CMakeFiles/AKAZE.dir/lib/AKAZE.cpp.o
+cd /home/ah14aeb/Software/kaze/akaze/src && /usr/bin/c++    -I/home/ah14aeb/Software/kaze/akaze/src/lib -isystem /home/ah14aeb/Software/opencv310/include/opencv -isystem /home/ah14aeb/Software/opencv310/include  -fopenmp -O3 -Wall -Wextra -Wunused-variable -g -fPIC -msse2 -msse3 -msse4 -ffast-math   -o CMakeFiles/AKAZE.dir/lib/AKAZE.cpp.o -c /home/ah14aeb/Software/kaze/akaze/src/lib/AKAZE.cpp
+[ 27%] Building CXX object src/CMakeFiles/AKAZE.dir/lib/utils.cpp.o
+cd /home/ah14aeb/Software/kaze/akaze/src && /usr/bin/c++    -I/home/ah14aeb/Software/kaze/akaze/src/lib -isystem /home/ah14aeb/Software/opencv310/include/opencv -isystem /home/ah14aeb/Software/opencv310/include  -fopenmp -O3 -Wall -Wextra -Wunused-variable -g -fPIC -msse2 -msse3 -msse4 -ffast-math   -o CMakeFiles/AKAZE.dir/lib/utils.cpp.o -c /home/ah14aeb/Software/kaze/akaze/src/lib/utils.cpp
+[ 36%] Building CXX object src/CMakeFiles/AKAZE.dir/lib/fed.cpp.o
+cd /home/ah14aeb/Software/kaze/akaze/src && /usr/bin/c++    -I/home/ah14aeb/Software/kaze/akaze/src/lib -isystem /home/ah14aeb/Software/opencv310/include/opencv -isystem /home/ah14aeb/Software/opencv310/include  -fopenmp -O3 -Wall -Wextra -Wunused-variable -g -fPIC -msse2 -msse3 -msse4 -ffast-math   -o CMakeFiles/AKAZE.dir/lib/fed.cpp.o -c /home/ah14aeb/Software/kaze/akaze/src/lib/fed.cpp
+[ 45%] Linking CXX static library ../lib/libAKAZE.a
+cd /home/ah14aeb/Software/kaze/akaze/src && /usr/bin/cmake -P CMakeFiles/AKAZE.dir/cmake_clean_target.cmake
+cd /home/ah14aeb/Software/kaze/akaze/src && /usr/bin/cmake -E cmake_link_script CMakeFiles/AKAZE.dir/link.txt --verbose=1
+/usr/bin/ar qc ../lib/libAKAZE.a  CMakeFiles/AKAZE.dir/lib/AKAZE.cpp.o CMakeFiles/AKAZE.dir/lib/fed.cpp.o CMakeFiles/AKAZE.dir/lib/nldiffusion_functions.cpp.o CMakeFiles/AKAZE.dir/lib/utils.cpp.o
+/usr/bin/ranlib ../lib/libAKAZE.a
+gmake[2]: Leaving directory '/home/ah14aeb/Software/kaze/akaze'
+[ 45%] Built target AKAZE
+/usr/bin/gmake -f src/CMakeFiles/akaze_compare.dir/build.make src/CMakeFiles/akaze_compare.dir/depend
+/usr/bin/gmake -f src/CMakeFiles/akaze_features.dir/build.make src/CMakeFiles/akaze_features.dir/depend
+/usr/bin/gmake -f src/CMakeFiles/akaze_match.dir/build.make src/CMakeFiles/akaze_match.dir/depend
+gmake[2]: Entering directory '/home/ah14aeb/Software/kaze/akaze'
+cd /home/ah14aeb/Software/kaze/akaze && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/ah14aeb/Software/kaze/akaze /home/ah14aeb/Software/kaze/akaze/src /home/ah14aeb/Software/kaze/akaze /home/ah14aeb/Software/kaze/akaze/src /home/ah14aeb/Software/kaze/akaze/src/CMakeFiles/akaze_compare.dir/DependInfo.cmake --color=
+gmake[2]: Entering directory '/home/ah14aeb/Software/kaze/akaze'
+cd /home/ah14aeb/Software/kaze/akaze && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/ah14aeb/Software/kaze/akaze /home/ah14aeb/Software/kaze/akaze/src /home/ah14aeb/Software/kaze/akaze /home/ah14aeb/Software/kaze/akaze/src /home/ah14aeb/Software/kaze/akaze/src/CMakeFiles/akaze_features.dir/DependInfo.cmake --color=
+gmake[2]: Entering directory '/home/ah14aeb/Software/kaze/akaze'
+cd /home/ah14aeb/Software/kaze/akaze && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/ah14aeb/Software/kaze/akaze /home/ah14aeb/Software/kaze/akaze/src /home/ah14aeb/Software/kaze/akaze /home/ah14aeb/Software/kaze/akaze/src /home/ah14aeb/Software/kaze/akaze/src/CMakeFiles/akaze_match.dir/DependInfo.cmake --color=
+Scanning dependencies of target akaze_match
+gmake[2]: Leaving directory '/home/ah14aeb/Software/kaze/akaze'
+/usr/bin/gmake -f src/CMakeFiles/akaze_match.dir/build.make src/CMakeFiles/akaze_match.dir/build
+gmake[2]: Entering directory '/home/ah14aeb/Software/kaze/akaze'
+Scanning dependencies of target akaze_features
+Scanning dependencies of target akaze_compare
+gmake[2]: Leaving directory '/home/ah14aeb/Software/kaze/akaze'
+gmake[2]: Leaving directory '/home/ah14aeb/Software/kaze/akaze'
+/usr/bin/gmake -f src/CMakeFiles/akaze_compare.dir/build.make src/CMakeFiles/akaze_compare.dir/build
+/usr/bin/gmake -f src/CMakeFiles/akaze_features.dir/build.make src/CMakeFiles/akaze_features.dir/build
+[ 54%] Building CXX object src/CMakeFiles/akaze_match.dir/akaze_match.cpp.o
+gmake[2]: Entering directory '/home/ah14aeb/Software/kaze/akaze'
+cd /home/ah14aeb/Software/kaze/akaze/src && /usr/bin/c++    -I/home/ah14aeb/Software/kaze/akaze/src/lib -isystem /home/ah14aeb/Software/opencv310/include/opencv -isystem /home/ah14aeb/Software/opencv310/include  -fopenmp -O3 -Wall -Wextra -Wunused-variable -g -fPIC -msse2 -msse3 -msse4 -ffast-math   -o CMakeFiles/akaze_match.dir/akaze_match.cpp.o -c /home/ah14aeb/Software/kaze/akaze/src/akaze_match.cpp
+gmake[2]: Entering directory '/home/ah14aeb/Software/kaze/akaze'
+[ 63%] Building CXX object src/CMakeFiles/akaze_features.dir/akaze_features.cpp.o
+cd /home/ah14aeb/Software/kaze/akaze/src && /usr/bin/c++    -I/home/ah14aeb/Software/kaze/akaze/src/lib -isystem /home/ah14aeb/Software/opencv310/include/opencv -isystem /home/ah14aeb/Software/opencv310/include  -fopenmp -O3 -Wall -Wextra -Wunused-variable -g -fPIC -msse2 -msse3 -msse4 -ffast-math   -o CMakeFiles/akaze_features.dir/akaze_features.cpp.o -c /home/ah14aeb/Software/kaze/akaze/src/akaze_features.cpp
+[ 72%] Building CXX object src/CMakeFiles/akaze_compare.dir/akaze_compare.cpp.o
+cd /home/ah14aeb/Software/kaze/akaze/src && /usr/bin/c++    -I/home/ah14aeb/Software/kaze/akaze/src/lib -isystem /home/ah14aeb/Software/opencv310/include/opencv -isystem /home/ah14aeb/Software/opencv310/include  -fopenmp -O3 -Wall -Wextra -Wunused-variable -g -fPIC -msse2 -msse3 -msse4 -ffast-math   -o CMakeFiles/akaze_compare.dir/akaze_compare.cpp.o -c /home/ah14aeb/Software/kaze/akaze/src/akaze_compare.cpp
+[ 81%] Linking CXX executable ../bin/akaze_match
+cd /home/ah14aeb/Software/kaze/akaze/src && /usr/bin/cmake -E cmake_link_script CMakeFiles/akaze_match.dir/link.txt --verbose=1
+/usr/bin/c++    -fopenmp -O3 -Wall -Wextra -Wunused-variable -g -fPIC -msse2 -msse3 -msse4 -ffast-math   CMakeFiles/akaze_match.dir/akaze_match.cpp.o  -o ../bin/akaze_match  -L/usr/local/cuda/lib64 -rdynamic ../lib/libAKAZE.a /home/ah14aeb/Software/opencv310/lib/libopencv_videostab.so.3.1.0 /home/ah14aeb/Software/opencv310/lib/libopencv_superres.so.3.1.0 /home/ah14aeb/Software/opencv310/lib/libopencv_stitching.so.3.1.0 /home/ah14aeb/Software/opencv310/lib/libopencv_shape.so.3.1.0 /home/ah14aeb/Software/opencv310/lib/libopencv_photo.so.3.1.0 /home/ah14aeb/Software/opencv310/lib/libopencv_cudastereo.so.3.1.0 /home/ah14aeb/Software/opencv310/lib/libopencv_cudaoptflow.so.3.1.0 /home/ah14aeb/Software/opencv310/lib/libopencv_cudaobjdetect.so.3.1.0 /home/ah14aeb/Software/opencv310/lib/libopencv_cudalegacy.so.3.1.0 /home/ah14aeb/Software/opencv310/lib/libopencv_objdetect.so.3.1.0 /home/ah14aeb/Software/opencv310/lib/libopencv_cudaimgproc.so.3.1.0 /home/ah14aeb/Software/opencv310/lib/libopencv_cudafeatures2d.so.3.1.0 /home/ah14aeb/Software/opencv310/lib/libopencv_cudawarping.so.3.1.0 /home/ah14aeb/Software/opencv310/lib/libopencv_cudafilters.so.3.1.0 /home/ah14aeb/Software/opencv310/lib/libopencv_cudacodec.so.3.1.0 /home/ah14aeb/Software/opencv310/lib/libopencv_cudabgsegm.so.3.1.0 /home/ah14aeb/Software/opencv310/lib/libopencv_video.so.3.1.0 /home/ah14aeb/Software/opencv310/lib/libopencv_cudaarithm.so.3.1.0 /home/ah14aeb/Software/opencv310/lib/libopencv_calib3d.so.3.1.0 /home/ah14aeb/Software/opencv310/lib/libopencv_features2d.so.3.1.0 /home/ah14aeb/Software/opencv310/lib/libopencv_ml.so.3.1.0 /home/ah14aeb/Software/opencv310/lib/libopencv_highgui.so.3.1.0 /home/ah14aeb/Software/opencv310/lib/libopencv_videoio.so.3.1.0 /home/ah14aeb/Software/opencv310/lib/libopencv_imgcodecs.so.3.1.0 /home/ah14aeb/Software/opencv310/lib/libopencv_imgproc.so.3.1.0 /home/ah14aeb/Software/opencv310/lib/libopencv_flann.so.3.1.0 /home/ah14aeb/Software/opencv310/lib/libopencv_core.so.3.1.0 /home/ah14aeb/Software/opencv310/lib/libopencv_cudev.so.3.1.0 -Wl,-rpath,/usr/local/cuda/lib64:/home/ah14aeb/Software/opencv310/lib 
+[ 90%] Linking CXX executable ../bin/akaze_features
+cd /home/ah14aeb/Software/kaze/akaze/src && /usr/bin/cmake -E cmake_link_script CMakeFiles/akaze_features.dir/link.txt --verbose=1
+/usr/bin/c++    -fopenmp -O3 -Wall -Wextra -Wunused-variable -g -fPIC -msse2 -msse3 -msse4 -ffast-math   CMakeFiles/akaze_features.dir/akaze_features.cpp.o  -o ../bin/akaze_features  -L/usr/local/cuda/lib64 -rdynamic ../lib/libAKAZE.a /home/ah14aeb/Software/opencv310/lib/libopencv_videostab.so.3.1.0 /home/ah14aeb/Software/opencv310/lib/libopencv_superres.so.3.1.0 /home/ah14aeb/Software/opencv310/lib/libopencv_stitching.so.3.1.0 /home/ah14aeb/Software/opencv310/lib/libopencv_shape.so.3.1.0 /home/ah14aeb/Software/opencv310/lib/libopencv_photo.so.3.1.0 /home/ah14aeb/Software/opencv310/lib/libopencv_cudastereo.so.3.1.0 /home/ah14aeb/Software/opencv310/lib/libopencv_cudaoptflow.so.3.1.0 /home/ah14aeb/Software/opencv310/lib/libopencv_cudaobjdetect.so.3.1.0 /home/ah14aeb/Software/opencv310/lib/libopencv_cudalegacy.so.3.1.0 /home/ah14aeb/Software/opencv310/lib/libopencv_objdetect.so.3.1.0 /home/ah14aeb/Software/opencv310/lib/libopencv_cudaimgproc.so.3.1.0 /home/ah14aeb/Software/opencv310/lib/libopencv_cudafeatures2d.so.3.1.0 /home/ah14aeb/Software/opencv310/lib/libopencv_cudawarping.so.3.1.0 /home/ah14aeb/Software/opencv310/lib/libopencv_cudafilters.so.3.1.0 /home/ah14aeb/Software/opencv310/lib/libopencv_cudacodec.so.3.1.0 /home/ah14aeb/Software/opencv310/lib/libopencv_cudabgsegm.so.3.1.0 /home/ah14aeb/Software/opencv310/lib/libopencv_video.so.3.1.0 /home/ah14aeb/Software/opencv310/lib/libopencv_cudaarithm.so.3.1.0 /home/ah14aeb/Software/opencv310/lib/libopencv_calib3d.so.3.1.0 /home/ah14aeb/Software/opencv310/lib/libopencv_features2d.so.3.1.0 /home/ah14aeb/Software/opencv310/lib/libopencv_ml.so.3.1.0 /home/ah14aeb/Software/opencv310/lib/libopencv_highgui.so.3.1.0 /home/ah14aeb/Software/opencv310/lib/libopencv_videoio.so.3.1.0 /home/ah14aeb/Software/opencv310/lib/libopencv_imgcodecs.so.3.1.0 /home/ah14aeb/Software/opencv310/lib/libopencv_imgproc.so.3.1.0 /home/ah14aeb/Software/opencv310/lib/libopencv_flann.so.3.1.0 /home/ah14aeb/Software/opencv310/lib/libopencv_core.so.3.1.0 /home/ah14aeb/Software/opencv310/lib/libopencv_cudev.so.3.1.0 -Wl,-rpath,/usr/local/cuda/lib64:/home/ah14aeb/Software/opencv310/lib 
+gmake[2]: Leaving directory '/home/ah14aeb/Software/kaze/akaze'
+[ 90%] Built target akaze_match
+[100%] Linking CXX executable ../bin/akaze_compare
+cd /home/ah14aeb/Software/kaze/akaze/src && /usr/bin/cmake -E cmake_link_script CMakeFiles/akaze_compare.dir/link.txt --verbose=1
+/usr/bin/c++    -fopenmp -O3 -Wall -Wextra -Wunused-variable -g -fPIC -msse2 -msse3 -msse4 -ffast-math   CMakeFiles/akaze_compare.dir/akaze_compare.cpp.o  -o ../bin/akaze_compare  -L/usr/local/cuda/lib64 -rdynamic ../lib/libAKAZE.a /home/ah14aeb/Software/opencv310/lib/libopencv_videostab.so.3.1.0 /home/ah14aeb/Software/opencv310/lib/libopencv_superres.so.3.1.0 /home/ah14aeb/Software/opencv310/lib/libopencv_stitching.so.3.1.0 /home/ah14aeb/Software/opencv310/lib/libopencv_shape.so.3.1.0 /home/ah14aeb/Software/opencv310/lib/libopencv_photo.so.3.1.0 /home/ah14aeb/Software/opencv310/lib/libopencv_cudastereo.so.3.1.0 /home/ah14aeb/Software/opencv310/lib/libopencv_cudaoptflow.so.3.1.0 /home/ah14aeb/Software/opencv310/lib/libopencv_cudaobjdetect.so.3.1.0 /home/ah14aeb/Software/opencv310/lib/libopencv_cudalegacy.so.3.1.0 /home/ah14aeb/Software/opencv310/lib/libopencv_objdetect.so.3.1.0 /home/ah14aeb/Software/opencv310/lib/libopencv_cudaimgproc.so.3.1.0 /home/ah14aeb/Software/opencv310/lib/libopencv_cudafeatures2d.so.3.1.0 /home/ah14aeb/Software/opencv310/lib/libopencv_cudawarping.so.3.1.0 /home/ah14aeb/Software/opencv310/lib/libopencv_cudafilters.so.3.1.0 /home/ah14aeb/Software/opencv310/lib/libopencv_cudacodec.so.3.1.0 /home/ah14aeb/Software/opencv310/lib/libopencv_cudabgsegm.so.3.1.0 /home/ah14aeb/Software/opencv310/lib/libopencv_video.so.3.1.0 /home/ah14aeb/Software/opencv310/lib/libopencv_cudaarithm.so.3.1.0 /home/ah14aeb/Software/opencv310/lib/libopencv_calib3d.so.3.1.0 /home/ah14aeb/Software/opencv310/lib/libopencv_features2d.so.3.1.0 /home/ah14aeb/Software/opencv310/lib/libopencv_ml.so.3.1.0 /home/ah14aeb/Software/opencv310/lib/libopencv_highgui.so.3.1.0 /home/ah14aeb/Software/opencv310/lib/libopencv_videoio.so.3.1.0 /home/ah14aeb/Software/opencv310/lib/libopencv_imgcodecs.so.3.1.0 /home/ah14aeb/Software/opencv310/lib/libopencv_imgproc.so.3.1.0 /home/ah14aeb/Software/opencv310/lib/libopencv_flann.so.3.1.0 /home/ah14aeb/Software/opencv310/lib/libopencv_core.so.3.1.0 /home/ah14aeb/Software/opencv310/lib/libopencv_cudev.so.3.1.0 -Wl,-rpath,/usr/local/cuda/lib64:/home/ah14aeb/Software/opencv310/lib 
+gmake[2]: Leaving directory '/home/ah14aeb/Software/kaze/akaze'
+[100%] Built target akaze_features
+gmake[2]: Leaving directory '/home/ah14aeb/Software/kaze/akaze'
+[100%] Built target akaze_compare
+gmake[1]: Leaving directory '/home/ah14aeb/Software/kaze/akaze'
+/usr/bin/cmake -E cmake_progress_start /home/ah14aeb/Software/kaze/akaze/CMakeFiles 0
+
+11:59:24 Build Finished (took 3s.880ms)
+
+16:25:42 **** Build of project AKAZE-Release@akaze ****
+/usr/bin/gmake -j12 all 
+/usr/bin/cmake -H/home/ah14aeb/Software/kaze/akaze -B/home/ah14aeb/Software/kaze/akaze --check-build-system CMakeFiles/Makefile.cmake 0
+/usr/bin/cmake -E cmake_progress_start /home/ah14aeb/Software/kaze/akaze/CMakeFiles /home/ah14aeb/Software/kaze/akaze/CMakeFiles/progress.marks
+/usr/bin/gmake -f CMakeFiles/Makefile2 all
+gmake[1]: Entering directory '/home/ah14aeb/Software/kaze/akaze'
+/usr/bin/gmake -f src/CMakeFiles/AKAZE.dir/build.make src/CMakeFiles/AKAZE.dir/depend
+gmake[2]: Entering directory '/home/ah14aeb/Software/kaze/akaze'
+cd /home/ah14aeb/Software/kaze/akaze && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/ah14aeb/Software/kaze/akaze /home/ah14aeb/Software/kaze/akaze/src /home/ah14aeb/Software/kaze/akaze /home/ah14aeb/Software/kaze/akaze/src /home/ah14aeb/Software/kaze/akaze/src/CMakeFiles/AKAZE.dir/DependInfo.cmake --color=
+gmake[2]: Leaving directory '/home/ah14aeb/Software/kaze/akaze'
+/usr/bin/gmake -f src/CMakeFiles/AKAZE.dir/build.make src/CMakeFiles/AKAZE.dir/build
+gmake[2]: Entering directory '/home/ah14aeb/Software/kaze/akaze'
+gmake[2]: Nothing to be done for 'src/CMakeFiles/AKAZE.dir/build'.
+gmake[2]: Leaving directory '/home/ah14aeb/Software/kaze/akaze'
+[ 45%] Built target AKAZE
+/usr/bin/gmake -f src/CMakeFiles/akaze_compare.dir/build.make src/CMakeFiles/akaze_compare.dir/depend
+/usr/bin/gmake -f src/CMakeFiles/akaze_features.dir/build.make src/CMakeFiles/akaze_features.dir/depend
+/usr/bin/gmake -f src/CMakeFiles/akaze_match.dir/build.make src/CMakeFiles/akaze_match.dir/depend
+gmake[2]: Entering directory '/home/ah14aeb/Software/kaze/akaze'
+cd /home/ah14aeb/Software/kaze/akaze && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/ah14aeb/Software/kaze/akaze /home/ah14aeb/Software/kaze/akaze/src /home/ah14aeb/Software/kaze/akaze /home/ah14aeb/Software/kaze/akaze/src /home/ah14aeb/Software/kaze/akaze/src/CMakeFiles/akaze_compare.dir/DependInfo.cmake --color=
+gmake[2]: Entering directory '/home/ah14aeb/Software/kaze/akaze'
+cd /home/ah14aeb/Software/kaze/akaze && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/ah14aeb/Software/kaze/akaze /home/ah14aeb/Software/kaze/akaze/src /home/ah14aeb/Software/kaze/akaze /home/ah14aeb/Software/kaze/akaze/src /home/ah14aeb/Software/kaze/akaze/src/CMakeFiles/akaze_match.dir/DependInfo.cmake --color=
+gmake[2]: Entering directory '/home/ah14aeb/Software/kaze/akaze'
+cd /home/ah14aeb/Software/kaze/akaze && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/ah14aeb/Software/kaze/akaze /home/ah14aeb/Software/kaze/akaze/src /home/ah14aeb/Software/kaze/akaze /home/ah14aeb/Software/kaze/akaze/src /home/ah14aeb/Software/kaze/akaze/src/CMakeFiles/akaze_features.dir/DependInfo.cmake --color=
+gmake[2]: Leaving directory '/home/ah14aeb/Software/kaze/akaze'
+/usr/bin/gmake -f src/CMakeFiles/akaze_compare.dir/build.make src/CMakeFiles/akaze_compare.dir/build
+gmake[2]: Leaving directory '/home/ah14aeb/Software/kaze/akaze'
+gmake[2]: Leaving directory '/home/ah14aeb/Software/kaze/akaze'
+/usr/bin/gmake -f src/CMakeFiles/akaze_features.dir/build.make src/CMakeFiles/akaze_features.dir/build
+/usr/bin/gmake -f src/CMakeFiles/akaze_match.dir/build.make src/CMakeFiles/akaze_match.dir/build
+gmake[2]: Entering directory '/home/ah14aeb/Software/kaze/akaze'
+gmake[2]: Nothing to be done for 'src/CMakeFiles/akaze_compare.dir/build'.
+gmake[2]: Leaving directory '/home/ah14aeb/Software/kaze/akaze'
+gmake[2]: Entering directory '/home/ah14aeb/Software/kaze/akaze'
+gmake[2]: Nothing to be done for 'src/CMakeFiles/akaze_match.dir/build'.
+gmake[2]: Leaving directory '/home/ah14aeb/Software/kaze/akaze'
+gmake[2]: Entering directory '/home/ah14aeb/Software/kaze/akaze'
+gmake[2]: Nothing to be done for 'src/CMakeFiles/akaze_features.dir/build'.
+gmake[2]: Leaving directory '/home/ah14aeb/Software/kaze/akaze'
+[ 63%] Built target akaze_compare
+[ 81%] Built target akaze_match
+[100%] Built target akaze_features
+gmake[1]: Leaving directory '/home/ah14aeb/Software/kaze/akaze'
+/usr/bin/cmake -E cmake_progress_start /home/ah14aeb/Software/kaze/akaze/CMakeFiles 0
+16:28:34 **** Build of project AKAZE-Debug@akaze ****
+/usr/bin/gmake -j12 all 
+/usr/bin/cmake -H/home/ah14aeb/Software/kaze/akaze -B/home/ah14aeb/Software/kaze/akaze --check-build-system CMakeFiles/Makefile.cmake 0
+/usr/bin/cmake -E cmake_progress_start /home/ah14aeb/Software/kaze/akaze/CMakeFiles /home/ah14aeb/Software/kaze/akaze/CMakeFiles/progress.marks
+/usr/bin/gmake -f CMakeFiles/Makefile2 all
+gmake[1]: Entering directory '/home/ah14aeb/Software/kaze/akaze'
+/usr/bin/gmake -f src/CMakeFiles/AKAZE.dir/build.make src/CMakeFiles/AKAZE.dir/depend
+gmake[2]: Entering directory '/home/ah14aeb/Software/kaze/akaze'
+cd /home/ah14aeb/Software/kaze/akaze && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/ah14aeb/Software/kaze/akaze /home/ah14aeb/Software/kaze/akaze/src /home/ah14aeb/Software/kaze/akaze /home/ah14aeb/Software/kaze/akaze/src /home/ah14aeb/Software/kaze/akaze/src/CMakeFiles/AKAZE.dir/DependInfo.cmake --color=
+gmake[2]: Leaving directory '/home/ah14aeb/Software/kaze/akaze'
+/usr/bin/gmake -f src/CMakeFiles/AKAZE.dir/build.make src/CMakeFiles/AKAZE.dir/build
+gmake[2]: Entering directory '/home/ah14aeb/Software/kaze/akaze'
+gmake[2]: Nothing to be done for 'src/CMakeFiles/AKAZE.dir/build'.
+gmake[2]: Leaving directory '/home/ah14aeb/Software/kaze/akaze'
+[ 45%] Built target AKAZE
+/usr/bin/gmake -f src/CMakeFiles/akaze_compare.dir/build.make src/CMakeFiles/akaze_compare.dir/depend
+/usr/bin/gmake -f src/CMakeFiles/akaze_features.dir/build.make src/CMakeFiles/akaze_features.dir/depend
+/usr/bin/gmake -f src/CMakeFiles/akaze_match.dir/build.make src/CMakeFiles/akaze_match.dir/depend
+gmake[2]: Entering directory '/home/ah14aeb/Software/kaze/akaze'
+cd /home/ah14aeb/Software/kaze/akaze && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/ah14aeb/Software/kaze/akaze /home/ah14aeb/Software/kaze/akaze/src /home/ah14aeb/Software/kaze/akaze /home/ah14aeb/Software/kaze/akaze/src /home/ah14aeb/Software/kaze/akaze/src/CMakeFiles/akaze_match.dir/DependInfo.cmake --color=
+gmake[2]: Entering directory '/home/ah14aeb/Software/kaze/akaze'
+cd /home/ah14aeb/Software/kaze/akaze && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/ah14aeb/Software/kaze/akaze /home/ah14aeb/Software/kaze/akaze/src /home/ah14aeb/Software/kaze/akaze /home/ah14aeb/Software/kaze/akaze/src /home/ah14aeb/Software/kaze/akaze/src/CMakeFiles/akaze_compare.dir/DependInfo.cmake --color=
+gmake[2]: Entering directory '/home/ah14aeb/Software/kaze/akaze'
+cd /home/ah14aeb/Software/kaze/akaze && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/ah14aeb/Software/kaze/akaze /home/ah14aeb/Software/kaze/akaze/src /home/ah14aeb/Software/kaze/akaze /home/ah14aeb/Software/kaze/akaze/src /home/ah14aeb/Software/kaze/akaze/src/CMakeFiles/akaze_features.dir/DependInfo.cmake --color=
+gmake[2]: Leaving directory '/home/ah14aeb/Software/kaze/akaze'
+gmake[2]: Leaving directory '/home/ah14aeb/Software/kaze/akaze'
+/usr/bin/gmake -f src/CMakeFiles/akaze_compare.dir/build.make src/CMakeFiles/akaze_compare.dir/build
+/usr/bin/gmake -f src/CMakeFiles/akaze_match.dir/build.make src/CMakeFiles/akaze_match.dir/build
+gmake[2]: Leaving directory '/home/ah14aeb/Software/kaze/akaze'
+/usr/bin/gmake -f src/CMakeFiles/akaze_features.dir/build.make src/CMakeFiles/akaze_features.dir/build
+gmake[2]: Entering directory '/home/ah14aeb/Software/kaze/akaze'
+gmake[2]: Nothing to be done for 'src/CMakeFiles/akaze_compare.dir/build'.
+gmake[2]: Leaving directory '/home/ah14aeb/Software/kaze/akaze'
+gmake[2]: Entering directory '/home/ah14aeb/Software/kaze/akaze'
+gmake[2]: Nothing to be done for 'src/CMakeFiles/akaze_features.dir/build'.
+gmake[2]: Leaving directory '/home/ah14aeb/Software/kaze/akaze'
+gmake[2]: Entering directory '/home/ah14aeb/Software/kaze/akaze'
+gmake[2]: Nothing to be done for 'src/CMakeFiles/akaze_match.dir/build'.
+gmake[2]: Leaving directory '/home/ah14aeb/Software/kaze/akaze'
+[ 63%] Built target akaze_features
+[ 81%] Built target akaze_compare
+[100%] Built target akaze_match
+gmake[1]: Leaving directory '/home/ah14aeb/Software/kaze/akaze'
+/usr/bin/cmake -E cmake_progress_start /home/ah14aeb/Software/kaze/akaze/CMakeFiles 0
